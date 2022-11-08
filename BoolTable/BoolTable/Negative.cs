@@ -15,7 +15,7 @@ public class Negative:Formula
 
     public override void Print()
     {
-        Console.Write("~");
+        Console.Write("¬");
         _formula.Print();
     }
 }

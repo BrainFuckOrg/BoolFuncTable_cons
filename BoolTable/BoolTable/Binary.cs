@@ -5,13 +5,6 @@ namespace BoolTable;
 public class Binary:Formula
 {
     private Formula _formula1, _formula2;
-    public enum BinaryOperator
-    {
-        And,
-        Or,
-        Xor,
-        IfThen
-    }
     public BinaryOperator CurrentOperator { get; private set; }
     public Binary(Formula formula1, Formula formula2,BinaryOperator currentOperator)
     {
@@ -27,7 +20,8 @@ public class Binary:Formula
             BinaryOperator.And => _formula1.GetValue() & _formula2.GetValue(),
             BinaryOperator.Or => _formula1.GetValue() | _formula2.GetValue(),
             BinaryOperator.Xor => _formula1.GetValue() ^ _formula2.GetValue(),
-            BinaryOperator.IfThen => !_formula1.GetValue() | _formula2.GetValue()
+            BinaryOperator.IfThen => !_formula1.GetValue() | _formula2.GetValue(),
+            BinaryOperator.Equals=>_formula1.GetValue()==_formula2.GetValue()
         };
     }
     public override void Print()
@@ -38,7 +32,8 @@ public class Binary:Formula
             BinaryOperator.And=>"∩",
             BinaryOperator.Or=>"∪",
             BinaryOperator.Xor=>"⊕",
-            BinaryOperator.IfThen=>"→"
+            BinaryOperator.IfThen=>"→",
+            BinaryOperator.Equals=>"↔"
         });
         _formula2.Print();
         Console.Write(")");
