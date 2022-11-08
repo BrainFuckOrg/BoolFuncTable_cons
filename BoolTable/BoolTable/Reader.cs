@@ -1,6 +1,6 @@
 namespace BoolTable;
 
-public class Reader
+public static class Reader
 {
     
 }

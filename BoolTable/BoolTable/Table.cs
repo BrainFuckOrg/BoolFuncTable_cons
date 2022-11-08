@@ -1,6 +1,6 @@
 namespace BoolTable;
 
-public class Table
+public static class Table
 {
     
 }
